@@ -25,11 +25,12 @@ header {
 .menu ul {
   display: flex;
   flex-flow: row nowrap;
-  margin: 2px 0 0;
+  margin: 4px 0 4px 0;
   padding: 0;
   font-size: 16px;
   line-height: 18px;
   list-style: none;
+  border-radius: 2px;
 }
 
 .menu li {
@@ -42,11 +43,19 @@ header {
 
 .menu a,
 .menu .active {
-  border: 1px solid black;
+  text-align: center;
+  border-radius: 15%;
   display: block;
-  padding: 8px 10px;
+  padding: 10px 6px 10px 10px;
   text-transform: uppercase;
-  letter-spacing: .27em;
+  letter-spacing: .22em;
+  font-weight: 700;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  /* background: linear-gradient(91.85deg, #FF5863 0.1%, #EB212E 101.94%, #EB212E 101.94%); */
+  border-radius: 10px;
 
 }
 
