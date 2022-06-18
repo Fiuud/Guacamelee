@@ -3,12 +3,15 @@ mongoose.connect('mongodb://localhost/all')
 var Hero = require("./models/hero").Hero
 var async = require('async');
 
-mongoose.connection.on("open",function(){
+function open(callback){
+    mongoose.connection.on("open",callback)
+}
+function dropDatabase(callback){
     var db = mongoose.connection.db
-    db.dropDatabase(function(err){
-        if(err) throw err
-
-        async.parallel([
+    db.dropDatabase(callback)
+}
+function createHeroes(callback){
+    async.parallel([
             function(callback){
                 var pig = new Hero({nick:"pig"})
                 pig.save(function(err,pig){
@@ -29,12 +32,19 @@ mongoose.connection.on("open",function(){
             }
         ],
         function(err,result){
-            if(err){
-                console.log(err)
-            } else {
-                console.log("Успешно созданы герои с никами: " +result.join(", "))
-            }
-            mongoose.disconnect()
+            callback(err)
         })
-    })
+}
+function close(callback){
+    mongoose.disconnect(callback)
+}
+async.series([
+    open,
+    dropDatabase,
+    createHeroes,
+    close
+],
+function(err,result){
+    if(err) throw err
+    console.log("ok")
 })
