@@ -5,11 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var heroes = require('./routes/heroes');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var routes = require('./routes/index');
+var users = require('./routes/users');
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/guac')
-var session = require("express-session")
+var session = require('express-session');
+var MongoStore = require('connect-mongo');
 
 var app = express();
 
@@ -25,11 +26,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(session({
-  secret: "VinniIsHero",
-  cookie: { maxAge: 60 * 1000 }
+  secret: "guac",
+  cookie: { maxAge: 60 * 1000 },
+  store: MongoStore.create({ mongoUrl: 'mongodb://localhost/guac' })
 }))
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', routes);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
