@@ -25,11 +25,18 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
+
 app.use(session({
   secret: "guac",
   cookie: { maxAge: 60 * 1000 },
   store: MongoStore.create({ mongoUrl: 'mongodb://localhost/guac' })
 }))
+
+app.use(function (req, res, next) {
+  req.session.counter = req.session.counter + 1 || 1
+  next()
+})
+
 app.use('/', routes);
 app.use('/users', users);
 
