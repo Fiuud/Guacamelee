@@ -2,7 +2,8 @@ body {
   padding-left: 50px;
   padding-top: 20px;
   padding-right: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+  /* justify-content: center; */
 }
 
 header {
@@ -84,4 +85,20 @@ header {
 .tel a {
   color: #000;
   text-decoration: none;
+}
+
+/* HERO */
+.hero__card{
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+.hero__title{
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  font-weight: 700;
+}
+.hero__desc{
+  width: 50%;
+  margin: 0 auto;
 }
