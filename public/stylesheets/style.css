@@ -2,7 +2,7 @@ body {
   padding-left: 50px;
   padding-top: 20px;
   padding-right: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* justify-content: center; */
 }
 
@@ -44,26 +44,27 @@ header {
 
 .menu a,
 .menu .active {
-  text-align: center;
-  border-radius: 15%;
+  /* text-align: center; */
+  /* border-radius: 15%; */
   display: block;
-  padding: 10px 6px 10px 10px;
+  /* padding: 10px 6px 10px 10px; */
   text-transform: uppercase;
-  letter-spacing: .22em;
+  letter-spacing: .10em;
   font-weight: 700;
   font-size: 20px;
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
   border: none;
   cursor: pointer;
   /* background: linear-gradient(91.85deg, #FF5863 0.1%, #EB212E 101.94%, #EB212E 101.94%); */
-  border-radius: 10px;
+  /* border-radius: 10px; */
 
 }
-
+.hero__pic{
+  margin-bottom: 10px;
+}
 .menu a:hover {
-
-  background-color: rgb(0, 0, 0);
-  color: white;
+  /* background-color: rgb(0, 0, 0); */
+  /* color: white; */
 }
 
 .menu a {
@@ -88,17 +89,19 @@ header {
 }
 
 /* HERO */
-.hero__card{
+.hero__card {
   display: block;
   text-align: center;
   align-items: center;
 }
-.hero__title{
+
+.hero__title {
   text-transform: uppercase;
   letter-spacing: .10em;
   font-weight: 700;
 }
-.hero__desc{
+
+.hero__desc {
   width: 50%;
   margin: 0 auto;
 }
