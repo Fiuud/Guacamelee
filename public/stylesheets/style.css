@@ -1,0 +1,107 @@
+body {
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-right: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* justify-content: center; */
+}
+
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.logo {
+  margin-right: 30px;
+}
+
+.menu {
+  flex-grow: 1;
+}
+
+.menu ul {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 4px 0 4px 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 18px;
+  list-style: none;
+  border-radius: 2px;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a,
+.menu .active {
+  /* text-align: center; */
+  /* border-radius: 15%; */
+  display: block;
+  /* padding: 10px 6px 10px 10px; */
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  font-weight: 700;
+  font-size: 20px;
+  /* color: #FFFFFF; */
+  border: none;
+  cursor: pointer;
+  /* background: linear-gradient(91.85deg, #FF5863 0.1%, #EB212E 101.94%, #EB212E 101.94%); */
+  /* border-radius: 10px; */
+
+}
+.hero__pic{
+  margin-bottom: 10px;
+}
+.menu a:hover {
+  /* background-color: rgb(0, 0, 0); */
+  /* color: white; */
+}
+
+.menu a {
+  color: #000;
+  text-decoration: none;
+}
+
+.menu .active {
+  color: #fff;
+  background-color: #ff3d00;
+  border-radius: 8px;
+}
+
+.tel {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.tel a {
+  color: #000;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero__card {
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+.hero__title {
+  text-transform: uppercase;
+  letter-spacing: .10em;
+  font-weight: 700;
+}
+
+.hero__desc {
+  width: 50%;
+  margin: 0 auto;
+}
